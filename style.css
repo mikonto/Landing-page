@@ -20,6 +20,7 @@ h1 {
     flex-direction: column; /* Header and hero as columns */
     align-items: center; /* Centralise header & hero */
     background: #1F2937;
+    padding-top: 20px;
     
 }
 
