@@ -1,4 +1,4 @@
-# landing-page
+# Landing page
 
-Landing page project for The Odin Project. 
+Assignment for The Odin Project. 
 Part of flexbox-section.
