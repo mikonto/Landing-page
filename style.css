@@ -1,34 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap');
 
 * {
-    font-family: Roboto, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    margin: 0; /* Removes margin around the page */
+    background-color: #FFF;
 }
 
 h1 {
     font-size: 48px;
     font-weight: 800;
     color: #F9FAF8;
-    margin: 0;
 }
 
-.dark-blue-section {
+body, h1, h2, p {
+    margin: 0; /* Remove default margins */
+}
+
+.darkblue-section {
     display: flex;
     flex-direction: column; /* Header and hero as columns */
     align-items: center; /* Centralise header & hero */
     background: #1F2937;
-    padding-top: 20px;
-    
-}
+    padding-top: 20px; /* Add padding above header */
+    }
 
 .header {
     display: flex;
-    justify-content: space-between; /* Logo -> left, menu -> right */
+    justify-content: space-between; /* Position logo left &  menu right */
     align-items: baseline; /* Align logo & menu vertically */
-    width: 75%; /* Header is only 75% of the whole page horizontally */
+    width: 70%; /* Make header 30% smaller than parent (darkblue-section) */
     color: #F9FAF8;
     font-size: 24px;
     font-weight: bold;
@@ -46,18 +48,17 @@ h1 {
 
 .hero {
     display: flex;
-    width: 75%; /* Hero is only 75% of the whole page horizontally */
+    width: 70%; /* Make hero 30% smaller than parent (darkblue-section) */
     min-height: 500px;
     align-items: center; /* Centralize hero-left and hero-right vertically */
-    justify-content: center; /* Centralize hero-left and hero-right horizontally */
-    flex-wrap: wrap; /* Wrap hero-left and hero-right in smaller screens */
+    flex-wrap: wrap; /* Wrap child elements (hero-left and hero-right) */
     font-size: 18px;
     color: #E5E7EB;
 }
 
 .hero-left {
-    padding: 15px; /* Space between text and placeholder image */
-    flex: 1;
+    padding: 30px 15px 15px 0;
+    flex: 1; /* Stretch hero-left to have all the excess horizontal space in hero */
 }
 
 button {
@@ -67,31 +68,20 @@ button {
     border-radius: 8px;
     background: #3882F6;
     border: 1px solid #3882F6;
-    color: white;
+    color: #FFF;
     font-weight: bold;
     font-size: 18px;
   }
 
 .hero-right {
-    padding: 15px;
-    flex: 1;
+    padding: 30px 0 15px 15px;
 }
-
-
-
-
-
-
-
-
-
 
 .information {    
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 500px;
-    background: #FFF;
+    flex-direction: column; /* Place child elements horizontally */
+    align-items: center; /* Centralize child elements*/
+    min-height: 400px;
   }
 
   .information-header {
@@ -99,58 +89,90 @@ button {
     color: #1F2937;
     font-size: 36px;
     font-weight: 800;
+    margin-bottom: 45px;
 }
 
 .card-container {
-    width: 50%;
     display: flex;
-    margin-top: 50px;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 40px; /* Separate card elements */
 }
 
 .card {
+    width: 180px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex: 1;
+    text-align: center; /* Centralize text */
 }
 
-.card .card-image {
-    border: solid 3px #3882f6;
-    width: 170px;
-    height: 170px;
+.card img {
     border-radius: 16px;
-    margin: 0 10px 0 10px;    
 }
 
-.card .card-text {
-    width: 70%;
-    margin: 10px;
+.card p {
+    color: #1F2937;
+    margin-top: 10px; /* Margin between img and text */
 }
 
-.quote { 
+.quote-section { 
+    min-height: 500px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;   
-    min-height: 500px;
+    align-items: center; /* Centralize child elements (quote & author) horizontally */
+    justify-content: center; /* Centralize child elements (quote & author) vertically */
     background: #E5E7EB;
   }
 
-  .quote-text {
-      width: 50%;
+ .quote-section .quote {
+      width: 50%; /* Quote element 50% smaller than parent element */
       font-size: 36px;
       font-style: italic;
       font-weight: 300;
       color: #1F2937;
   }
 
-  .quote-author {
-    width: 50%;
-    flex-direction: row-reverse;
-    text-align: end;
+ .quote-section .author {
+    width: 50%; /* Author element 50% smaller than parent element */
+    margin-top: 10px; /* Margin between quote and author */
+    text-align: end; /* Position author name into right end horizontally */
     font-size: 24px;
     font-weight: bold;
     color: #1F2937;
+  }
+
+  .cta-section { 
+    display: flex;
+    align-items: center; /* Centralize child element (cta) vertically */
+    justify-content: center;   /* Centralize child element (cta) horizontally */
+    min-height: 400px;
+  }
+
+  .cta {
+    display: flex;  
+    align-items: center; /* Centralize child elements (cta-text & button) */
+    justify-content: space-around; /* Position child elements (cta-text & button) horizontally */
+    flex-wrap: wrap;
+    width: 70%; /* Cta element 30% smaller than parent element */
+    min-height: 170px;
+    background-color: #3882f6;
+    border-radius: 8px;
+}
+
+  .cta-text {
+      color: #FFF;
+      margin: 20px;
+      font-size: 18px; /* Size of default text*/
+  }
+
+  .cta button {
+    border: 2px solid #FFF; 
+    margin: 20px;
+  }
+
+  .footer {
+    background: #1F2937;
+    color: #FFF;
+    padding: 40px;
+    text-align: center; /* Centralize text horizontally */
   }
